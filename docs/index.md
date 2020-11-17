@@ -1,4 +1,4 @@
-## O-NAS-H2+ 3D Printed Home Server/NAS  
+## O-NAS-H2+
 
 You can use the [editor on GitHub](https://github.com/mattlokes/onash2/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
 
