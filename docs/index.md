@@ -1,8 +1,24 @@
-## O-NAS-H2+
+# O-NAS-H2+
 
-You can use the [editor on GitHub](https://github.com/mattlokes/onash2/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+## Introduction
+![Image of ONASH2](https://github.com/mattlokes/onash2/blob/main/docs/onash2_main.jpg?raw=true)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Welcome! You are probably here from reddit, if not then check out the [post](https://www.reddit.com/r/3Dprinting/comments/juqaqa/designed_and_3d_printed_a_home_servernas/) that persuaded me to share and document my 3D printed NAS project.
+
+This document is in no means fully exhaustive, but hopefully give some idea/pointers of what's required to recreate.
+
+## Index
+ - 3D Printed Parts
+ - Electronics
+ - Software Setup
+   - Flashing the OS
+   - Compiling the Gigabit Ethernet Controller Driver
+   - Docker
+   - MDADM
+ - Status OLED 
+   - i2c connections
+   - Docker File
+ - FAQ
 
 ### Markdown
 
