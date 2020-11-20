@@ -13,7 +13,7 @@ Oh and why ONASH2.... ODroid - NAS - H2
 
 ## Index
  - [Specifications](#Specifications)
- - [3D Printed Parts](#3D-Printed-Parts)
+ - [Case](#Case)
  - [Electronics](#Electronics)
  - [Software Setup](#Software-Setup)
    - [Flashing the OS](#Flashing-the-OS)
@@ -39,29 +39,39 @@ ONASH2 is designed to use:
 - No Supports (Although it helps around HDD mounting screw slots in the legs)
 - **Dimensions 175x175x134mm**
 
-## 3D Printed Parts
+## Case
+
+### 3D Printed Parts List
 
 All parts pictured were printed in Galaxy Black Prusament PLA on a PRUSA Mini using the 0.2 Quality Presets. ( I did increase my bed temp to 63C to help with bed adhesion). All parts can be found [here](https://github.com/mattlokes/onash2/tree/main/stl)
 
-### Required Prints
-
-Part | Number | Print time (@ Above settings) 
----- | ------ | -----------------------------
-[onash2_case_bottom.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_case_bottom.stl)| 1 | ~15 hours
-[onash2_case_top.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_case_top.stl)| 1 | ~15 hours
-[onash2_lag_0.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_leg_0.stl)| 1 | ~5hours*
-[onash2_lag_1.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_leg_1.stl)| 1 | *
-[onash2_lag_2.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_leg_2.stl)| 1 | *
-[onash2_lag_3.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_leg_3.stl)| 1 | *
+Part | Number | Print time (@ Above settings) | Required
+---- | ------ | ----------------------------- | ---------
+[onash2_case_bottom.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_case_bottom.stl)| 1 | ~15 hrs | Yes
+[onash2_case_top.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_case_top.stl)| 1 | ~15 hrs | Yes
+[onash2_lag_0.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_leg_0.stl)| 1 | ~5 hrs* | Yes
+[onash2_lag_1.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_leg_1.stl)| 1 | * | Yes
+[onash2_lag_2.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_leg_2.stl)| 1 | * | Yes
+[onash2_lag_3.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_leg_3.stl)| 1 | * | Yes
+[onash2_2.5_3.5_hdd_adapter.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_2.5_3.5_hdd_adapter.stl)| 2 | ~30 mins | No
 _*Print Time is the total applied to all legs printed on the same plate_
 
-### Optional Prints
+### Other Parts List
 
-Part | Number | Print time (@ Above settings) 
----- | ------ | -----------------------------
-[onash2_2.5_3.5_hdd_adapter.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_2.5_3.5_hdd_adapter.stl)| 2 | ~30 minutes
+Part | Number | Comment 
+---- | ------ | -------
+40mm M3 Hex Cap Bolts/Nuts | 2 | For attaching the rear of the case top to bottom. (You will need a hex driver/key longer than 70mm)
+20mm M3 Hex Cap Bolts/Nuts | 2 | For attaching the front of the case top to bottom (40mm might also work)
+12mm M3 Hex Cap Bolts/Nuts | 12 | 8 - for the case legs, 4 - holding the board to the legs
+[Dust Filters](https://www.amazon.co.uk/gp/product/B07HFR2BM5/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) | 2 | The case was designed specifically for these, although any 120x120 dust filter which is no thicker than 2mm should be fine
+[9mm Diameter Rubber Feet](https://www.amazon.co.uk/gp/product/B076ND94QV/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) | 4 | Reduce any vibrations / noise
 
 ## Electronics
+
+### Parts List
+
+### Fan wiring
+
 ## Software Setup
 ### Flashing the OS
 ### Compiling the Gigabit Ethernet Controller Driver
