@@ -32,7 +32,7 @@ ONASH2 is designed to use:
 - 2x 3.5" HDDs, although 2.5" HDD can be used with the [printable included adapters](https://github.com/mattlokes/onash2/blob/main/stl/onash2_2.5_3.5_hdd_adapter.stl)
 - One Large 120mm Cooling Fan (**REQUIRED when using PLA**)
 - No power button ( You must set the Default Power State to S0 in the BIOS so that it will boot when power is applied )
-- Status OLED
+- [Status OLED](https://www.amazon.co.uk/gp/product/B07F3Y984N/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
 - Internal Mounting Point for a USB Port
 - Only M3 Screws (unless using 3.5" HDD which required different screws)
 - To be printed within a build volume of 180x180x120mm
@@ -40,7 +40,8 @@ ONASH2 is designed to use:
 - **Dimensions 175x175x134mm**
 
 ## 3D Printed Parts
-I printed the
+
+All parts pictured were printed in Galaxy Black Prusament PLA on a PRUSA Mini using the 0.2 Quality Presets.
 ## Electronics
 ## Software Setup
 ### Flashing the OS
@@ -51,6 +52,12 @@ I printed the
 ### I2C connections
 ### Docker File
 ## FAQ
+ - **Q: How much did this cost all in all?**
+   A: It really depends on what you want in terms of RAM/NVME/EMMC/HDD Capcity, i spent about £400 all in, but that includes 32GB of RAM which is overkill and 2x4TB 2.5" HDD. So you should be able to tailor to your budget.
+ - **Q: I've got a PRUSA Mini and i struggle to get the case parts not to curl, how did you do it?**
+   A: I had the same problem during the first attempt at printing, then i discovered this excellent mod [Silicon Bed Levelling](https://forum.prusaprinters.org/forum/user-mods-octoprint-enclosures-nozzles/prusa-mini-silicone-bed-leveling-mod/) over on the PRUSA forum. Well worth the fiddling and patience. I've had perfect first layers since!
+ - **Q: Is PLA really suitable for this?**
+   A: If you are asking this question or dont know why this could be an issue print in PETG to be safe :)
 
 ### Markdown
 
