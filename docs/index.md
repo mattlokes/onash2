@@ -69,11 +69,19 @@ Part | Number | Comment
 ## Electronics
 
 ### Parts List
+Part | Number | Comment 
+---- | ------ | -------
+[ODroid H2+]() | 1 |
+[60W 15V Power Supply]() | 1 |
+[5V PWM Noctua 120x120 Fan]() | 1 | **Make sure its 5V!**
+[JST 1.25mm 4 Pin](https://www.ebay.co.uk/itm/302007426719) | 1 | Required to connect the System Fan
+[1.5" I2C OLED](https://www.amazon.co.uk/gp/product/B07F3Y984N/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) | 1 | Case is designed for exactly this OLED dimensions
+[USB A Socket]() | 1 | Only required if you want the internal USB Port
 
 ### Fan wiring
 
 Using the JST Connector, and the Noctua fan extension cable that came in the box I soldered together an adapter to allow connecting it
-to the H2+. **Beware your JST Connector may different coloured wires!**
+to the H2+. **Beware your JST Connector may have different coloured wires!**
 
 Signal | JST Wire Colour | Noctua Wire Colour
 ------ | --------------- | ------------------
@@ -81,6 +89,13 @@ GND  |	![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) RED |	![#
 +5V  |	![#000000](https://via.placeholder.com/15/000000/000000?text=+) BLACK |	![#ffff00](https://via.placeholder.com/15/ffff00/000000?text=+) YELLOW
 TACH |	![#ffff00](https://via.placeholder.com/15/ffff00/000000?text=+) YELLOW |	![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) GREEN
 PWM  |	![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) GREEN | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)BLUE
+
+### OLED Wiring
+
+See [Status OLED](#Status-OLED)
+
+### Internal USB Wiring
+
 
 ## Software Setup
 ### Flashing the OS
