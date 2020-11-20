@@ -72,6 +72,16 @@ Part | Number | Comment
 
 ### Fan wiring
 
+Using the JST Connector, and the Noctua fan extension cable that came in the box I soldered together an adapter to allow connecting it
+to the H2+. **Beware your JST Connector may different coloured wires!**
+
+Signal | JST Wire Colour | Noctua Wire Colour
+------ | --------------- | ------------------
+GND |	![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) RED |	![#000000](https://via.placeholder.com/15/000000/000000?text=+) BLACK
++5V |	BLACK |	YELLOW
+TACH |	YELLOW |	GREEN
+PWM |	GREEN |	BLUE
+
 ## Software Setup
 ### Flashing the OS
 ### Compiling the Gigabit Ethernet Controller Driver
