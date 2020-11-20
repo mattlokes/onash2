@@ -53,11 +53,17 @@ All parts pictured were printed in Galaxy Black Prusament PLA on a PRUSA Mini us
 ### Docker File
 ## FAQ
  - **Q: How much did this cost all in all?**
+ 
    A: It really depends on what you want in terms of RAM/NVME/EMMC/HDD Capcity, i spent about £400 all in, but that includes 32GB of RAM which is overkill and 2x4TB 2.5" HDD. So you should be able to tailor to your budget.
  - **Q: I've got a PRUSA Mini and i struggle to get the case parts not to curl, how did you do it?**
+ 
    A: I had the same problem during the first attempt at printing, then i discovered this excellent mod [Silicon Bed Levelling](https://forum.prusaprinters.org/forum/user-mods-octoprint-enclosures-nozzles/prusa-mini-silicone-bed-leveling-mod/) over on the PRUSA forum. Well worth the fiddling and patience. I've had perfect first layers since!
  - **Q: Is PLA really suitable for this?**
-   A: If you are asking this question or dont know why this could be an issue print in PETG to be safe :)
+ 
+   A: If you are asking this question or dont know why this could be an issue, print it in PETG to be safe :)
+ - **Q: Well why did you print in PLA then?**
+ 
+   A: Better print quality, easier to print and i understand the risks ( I think / hope )
 
 ### Markdown
 
