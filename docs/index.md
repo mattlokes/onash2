@@ -5,9 +5,14 @@
 
 Welcome, My recent Reddit [post](https://www.reddit.com/r/3Dprinting/comments/juqaqa/designed_and_3d_printed_a_home_servernas/) exploded with overwhelming postive comments and requests for documentation on my 3D printed NAS project, so here it is!
 
-This document is in no means fully exhaustive, but hopefully give some idea/pointers of what's required to recreate. If you have any further questions please feel free to send me issues via the github [repo](https://github.com/mattlokes/onash2). I will do my best to answer :) 
+This document is in no means fully exhaustive, but hopefully give some idea/pointers of what's required to recreate. If you have any further questions please feel free to send me issues via the github [repo](https://github.com/mattlokes/onash2). I will do my best to answer :)
+
+If anyone does print the parts and make there own ONASH2, you can thank me by sending a photo of it! :)
+
+Oh and why ONASH2.... ODroid - NAS - H2
 
 ## Index
+ - [Specifications](#Specifications)
  - [3D Printed Parts](#3D-Printed-Parts)
  - [Electronics](#Electronics)
  - [Software Setup](#Software-Setup)
@@ -20,7 +25,22 @@ This document is in no means fully exhaustive, but hopefully give some idea/poin
    - [Docker File](#Docker-File)
  - [FAQ](#FAQ)
 
+## Specifications
+
+ONASH2 is designed to use:
+- The [ODroid H2/H2+](https://www.hardkernel.com/shop/odroid-h2plus/)
+- 2x 3.5" HDDs, although 2.5" HDD can be used with the [printable included adapters](https://github.com/mattlokes/onash2/blob/main/stl/onash2_2.5_3.5_hdd_adapter.stl)
+- One Large 120mm Cooling Fan (**REQUIRED when using PLA**)
+- No power button ( You must set the Default Power State to S0 in the BIOS so that it will boot when power is applied )
+- Status OLED
+- Internal Mounting Point for a USB Port
+- Only M3 Screws (unless using 3.5" HDD which required different screws)
+- To be printed within a build volume of 180x180x120mm
+- No Supports (Although it helps around HDD mounting screw slots in the legs)
+- **Dimensions 175x175x134mm**
+
 ## 3D Printed Parts
+I printed the
 ## Electronics
 ## Software Setup
 ### Flashing the OS
