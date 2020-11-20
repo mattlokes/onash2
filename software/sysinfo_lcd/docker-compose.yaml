@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+  sysinfo_lcd:
+    container_name: sysinfo_lcd
+    build: sysinfo_lcd_dev
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
+    devices:
+      - /dev/i2c-2:/dev/i2c-2
+    volumes:
+      - /proc:/proc
+      - /mnt/nas:/mnt/nas:ro
+    environment:
+      SYSINFO_LCD_OPTS      : "--display ssd1327
+                               --width 128 
+                               --height 128
+                               --i2c-port 2"
