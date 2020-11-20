@@ -3,22 +3,34 @@
 ## Introduction
 ![Image of ONASH2](https://github.com/mattlokes/onash2/blob/main/docs/onash2_main.jpg?raw=true)
 
-Welcome! You are probably here from reddit, if not then check out the [post](https://www.reddit.com/r/3Dprinting/comments/juqaqa/designed_and_3d_printed_a_home_servernas/) that persuaded me to share and document my 3D printed NAS project.
+Welcome, My recent Reddit [post](https://www.reddit.com/r/3Dprinting/comments/juqaqa/designed_and_3d_printed_a_home_servernas/) exploded with overwhelming postive comments and requests for documentation on my 3D printed NAS project, so here it is!
 
-This document is in no means fully exhaustive, but hopefully give some idea/pointers of what's required to recreate.
+This document is in no means fully exhaustive, but hopefully give some idea/pointers of what's required to recreate. If you have any further questions please feel free to send me issues via the github [repo](https://github.com/mattlokes/onash2). I will do my best to answer :) 
 
 ## Index
- - 3D Printed Parts
- - Electronics
- - Software Setup
-   - Flashing the OS
-   - Compiling the Gigabit Ethernet Controller Driver
-   - Docker
-   - MDADM
- - Status OLED 
-   - i2c connections
-   - Docker File
- - FAQ
+ - [3D Printed Parts](#3D-Printed-Parts)
+ - [Electronics](#Electronics)
+ - [Software Setup](#Software-Setup)
+   - [Flashing the OS](#Flashing-the-OS)
+   - [Compiling the Gigabit Ethernet Controller Driver](#Compiling-the-Gigabit-Ethernet-Controller-Driver)
+   - [Docker](#Docker)
+   - [MDADM](#MDADM)
+ - [Status OLED](#Status-OLED) 
+   - [I2C connection](#I2C-connections)
+   - [Docker File](#Docker-File)
+ - [FAQ](#FAQ)
+
+## 3D Printed Parts
+## Electronics
+## Software Setup
+### Flashing the OS
+### Compiling the Gigabit Ethernet Controller Driver
+### Docker
+### MDADM
+## Status OLED 
+### I2C connections
+### Docker File
+## FAQ
 
 ### Markdown
 
