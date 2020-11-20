@@ -77,10 +77,10 @@ to the H2+. **Beware your JST Connector may different coloured wires!**
 
 Signal | JST Wire Colour | Noctua Wire Colour
 ------ | --------------- | ------------------
-GND |	![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) RED |	![#000000](https://via.placeholder.com/15/000000/000000?text=+) BLACK
-+5V |	BLACK |	YELLOW
-TACH |	YELLOW |	GREEN
-PWM |	GREEN |	BLUE
+GND  |	![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) RED |	![#000000](https://via.placeholder.com/15/000000/000000?text=+) BLACK
++5V  |	![#000000](https://via.placeholder.com/15/000000/000000?text=+) BLACK |	![#ffff00](https://via.placeholder.com/15/ffff00/000000?text=+) YELLOW
+TACH |	![#ffff00](https://via.placeholder.com/15/ffff00/000000?text=+) YELLOW |	![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) GREEN
+PWM  |	![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) GREEN | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)BLUE
 
 ## Software Setup
 ### Flashing the OS
