@@ -41,7 +41,26 @@ ONASH2 is designed to use:
 
 ## 3D Printed Parts
 
-All parts pictured were printed in Galaxy Black Prusament PLA on a PRUSA Mini using the 0.2 Quality Presets.
+All parts pictured were printed in Galaxy Black Prusament PLA on a PRUSA Mini using the 0.2 Quality Presets. ( I did increase my bed temp to 63C to help with bed adhesion). All parts can be found [here](https://github.com/mattlokes/onash2/tree/main/stl)
+
+### Required Prints
+
+Part | Number | Print time (@ Above settings) 
+---- | ------ | -----------------------------
+[onash2_case_bottom.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_case_bottom.stl)| 1 | ~15 hours
+[onash2_case_top.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_case_top.stl)| 1 | ~15 hours
+[onash2_lag_0.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_leg_0.stl)| 1 | ~5hours*
+[onash2_lag_1.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_leg_1.stl)| 1 | *
+[onash2_lag_2.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_leg_2.stl)| 1 | *
+[onash2_lag_3.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_leg_3.stl)| 1 | *
+_*Print Time is the total applied to all legs printed on the same plate_
+
+### Optional Prints
+
+Part | Number | Print time (@ Above settings) 
+---- | ------ | -----------------------------
+[onash2_2.5_3.5_hdd_adapter.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_2.5_3.5_hdd_adapter.stl)| 2 | ~30 minutes
+
 ## Electronics
 ## Software Setup
 ### Flashing the OS
@@ -54,7 +73,7 @@ All parts pictured were printed in Galaxy Black Prusament PLA on a PRUSA Mini us
 ## FAQ
  - **Q: How much did this cost all in all?**
  
-   A: It really depends on what you want in terms of RAM/NVME/EMMC/HDD Capcity, i spent about £400 all in, but that includes 32GB of RAM which is overkill and 2x4TB 2.5" HDD. So you should be able to tailor to your budget.
+   A: It really depends on what you want in terms of RAM/NVME/EMMC/HDD capcity, I spent about £400 all in, but that includes 32GB of RAM which is overkill and 2x4TB 2.5" HDD. So you should be able to tailor to your budget.
  - **Q: I've got a PRUSA Mini and i struggle to get the case parts not to curl, how did you do it?**
  
    A: I had the same problem during the first attempt at printing, then i discovered this excellent mod [Silicon Bed Levelling](https://forum.prusaprinters.org/forum/user-mods-octoprint-enclosures-nozzles/prusa-mini-silicone-bed-leveling-mod/) over on the PRUSA forum. Well worth the fiddling and patience. I've had perfect first layers since!
@@ -65,9 +84,6 @@ All parts pictured were printed in Galaxy Black Prusament PLA on a PRUSA Mini us
  
    A: Better print quality, easier to print and i understand the risks ( I think / hope )
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown
 Syntax highlighted code block
