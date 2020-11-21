@@ -18,7 +18,7 @@ Oh and why ONASH2.... ODroid - NAS - H2
  - [Software Setup](#Software-Setup)
    - [Auto Start on applying power](#Auto-Start-on-applying-power)
    - [Flashing the OS](#Flashing-the-OS)
-   - [Gigabit Ethernet Controller Driver](#Compiling-the-Gigabit-Ethernet-Controller-Driver)
+   - [Gigabit Ethernet Controller Driver](#Gigabit-Ethernet-Controller-Driver)
    - [Docker](#Docker)
    - [MDADM](#MDADM)
  - [Status OLED](#Status-OLED) 
