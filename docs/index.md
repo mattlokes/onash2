@@ -91,11 +91,11 @@ GND  |	![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) RED |	![#
 TACH |	![#ffff00](https://via.placeholder.com/15/ffff00/000000?text=+) YELLOW |	![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) GREEN
 PWM  |	![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) GREEN | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)BLUE
 
-### OLED/USB Wiring
+### OLED/ USB Wiring
 
 _I believe the USB port is only brought to the GPIO expansion header on the H2+ (Not the H2)._
 
-![Wiring](https://github.com/mattlokes/onash2/blob/main/docs/wiring.png?raw=true
+![Wiring](https://github.com/mattlokes/onash2/blob/main/docs/wiring.png?raw=true)
 
 
 
