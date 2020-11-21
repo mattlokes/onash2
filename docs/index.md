@@ -101,7 +101,7 @@ PWM  |	![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) GREEN | !
 
 
 
-### OLED/ USB Wiring
+### OLED/USB Wiring
 
 _I believe the USB port is only brought to the GPIO expansion header on the H2+ (Not the H2)._
 
@@ -140,7 +140,7 @@ I also see theres [now steps on Hardkernel](https://wiki.odroid.com/odroid-h2/ap
 
 If you are using the an Ubuntu Image with the same kernel (5.4.0-52-generic) as me, i've also [included the driver in the github repo](https://github.com/mattlokes/onash2/tree/main/software/r8125/5.4.0-52-generic) to make it super easy. You can copy this to your board using a USB stick and then load it into your kernel using [**insmod**](https://linux.die.net/man/8/insmod), then to bring up the network interface follow the instructions on [Hardkernel](https://wiki.odroid.com/odroid-h2/application_note/install_ethernet_driver_on_h2plus) 
 
-** If you do use my Precompiled Driver, as soon as its working i suggest you install properly using the instructions on [Hardkernel](https://wiki.odroid.com/odroid-h2/application_note/install_ethernet_driver_on_h2plus)
+** If you do use my Precompiled Driver, as soon as its working i suggest you install properly using the instructions on [Hardkernel](https://wiki.odroid.com/odroid-h2/application_note/install_ethernet_driver_on_h2plus)**
 
 ### Docker
 
@@ -160,7 +160,7 @@ To set up a RAID 1 Array follow [this guide](https://www.digitalocean.com/commun
 
 ### I2C connections
 
-I assume you have connected up your I2C Display following the [wiring diagram above](#OLED/USB Wiring). I2C 6 on the GPIO header is accessible via ```/dev/i2c-2``` from the linux terminal. The first thing you will need to do is find the address of the Display. I2C supports upto 127 addresses ```0x00 - 0x7F```. On my OLED there was a choice of two addresses based on a resistor soldered between two points that could be swapped (```0x78``` or ```0x7A```). However it turns out the PCB description was lying to me and the address was actaully ```0x3C``` go figure....
+I assume you have connected up your I2C Display following the [wiring diagram above](#OLED/USB-Wiring). I2C 6 on the GPIO header is accessible via ```/dev/i2c-2``` from the linux terminal. The first thing you will need to do is find the address of the Display. I2C supports upto 127 addresses ```0x00 - 0x7F```. On my OLED there was a choice of two addresses based on a resistor soldered between two points that could be swapped (```0x78``` or ```0x7A```). However it turns out the PCB description was lying to me and the address was actaully ```0x3C``` go figure....
 
 Anyway, to be able to find the address/confirm you've got something there, you can use i2c-tools to do a "detect" of the bus. Now theres a few fun caveats here:
 1. I2C doesnt strictly support "discovery" so if you run this on an I2C bus thats used for other purposes (CPU Temperature sensors / Clock chips etc) it could potential have bad side effects.
