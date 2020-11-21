@@ -54,6 +54,7 @@ Part | Number | Print time (@ Above settings) | Required
 [onash2_lag_2.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_leg_2.stl) | 1 | * | Yes
 [onash2_lag_3.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_leg_3.stl) | 1 | * | Yes
 [onash2_2.5_3.5_hdd_adapter.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_2.5_3.5_hdd_adapter.stl) | 2 | ~30 mins | No
+
 _*Print Time is the total applied to all legs printed on the same plate_
 
 ### Other Parts List
@@ -79,6 +80,7 @@ Part | Number | Comment
 4k7 Resistor | 2 | Used to pull High the I2C SDA/SCLK lines
 [USB A Socket](https://www.amazon.co.uk/gp/product/B07TVHRH5Q/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) | 1 | Only required if you want the internal USB Port
 
+
 ### Fan wiring
 
 Using the JST Connector, and the Noctua fan extension cable that came in the box I soldered together an adapter to allow connecting it
@@ -91,12 +93,12 @@ GND  |	![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) RED |	![#
 TACH |	![#ffff00](https://via.placeholder.com/15/ffff00/000000?text=+) YELLOW |	![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) GREEN
 PWM  |	![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) GREEN | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)BLUE
 
+
 ### OLED/ USB Wiring
 
 _I believe the USB port is only brought to the GPIO expansion header on the H2+ (Not the H2)._
 
 ![Wiring](https://github.com/mattlokes/onash2/blob/main/docs/wiring.png?raw=true)
-
 
 
 ## Software Setup
