@@ -17,6 +17,7 @@ Oh and why ONASH2.... ODroid - NAS - H2
  - [Electronics](#Electronics)
  - [Software Setup](#Software-Setup)
    - [Auto Start on applying power](#Auto-Start-on-applying-power)
+   - [Fan Control](#Fan-Control)
    - [Flashing the OS](#Flashing-the-OS)
    - [Gigabit Ethernet Controller Driver](#Gigabit-Ethernet-Controller-Driver)
    - [Docker](#Docker)
@@ -114,6 +115,11 @@ I'd advise doing all the software setup before you construct the server case.
 
 ### Auto Start on applying power
 Follow the instructions [here](https://wiki.odroid.com/odroid-h2/application_note/autostart_when_power_applied)
+
+### Fan Control
+Follow the instructions [here](https://wiki.odroid.com/odroid-h2/hardware/pwm_fan)
+
+**Tip: If you've printed the case in PLA, i would suggest that you set the low temperature to 40C - RPM 1000, medium to 47C - 1500 and high to 47C - 1500, then set thermal shutdown at 55C. This is to stop thermal runaway if the fan stops working, which could(would) cause the PLA to soften and possible damage** 
 
 ### Flashing the OS
 Follow the instructions on [Hardkernel](https://wiki.odroid.com/odroid-h2/start#installation) for this. However i picked 
