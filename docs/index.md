@@ -140,7 +140,7 @@ I also see theres [now steps on Hardkernel](https://wiki.odroid.com/odroid-h2/ap
 
 If you are using the an Ubuntu Image with the same kernel (5.4.0-52-generic) as me, i've also [included the driver in the github repo](https://github.com/mattlokes/onash2/tree/main/software/r8125/5.4.0-52-generic) to make it super easy. You can copy this to your board using a USB stick and then load it into your kernel using [**insmod**](https://linux.die.net/man/8/insmod), then to bring up the network interface follow the instructions on [Hardkernel](https://wiki.odroid.com/odroid-h2/application_note/install_ethernet_driver_on_h2plus) 
 
-** If you do use my Precompiled Driver, as soon as its working i suggest you install properly using the instructions on [Hardkernel](https://wiki.odroid.com/odroid-h2/application_note/install_ethernet_driver_on_h2plus)**
+**Tip: If you do use my Precompiled Driver, as soon as its working i suggest you install properly using the instructions on [Hardkernel](https://wiki.odroid.com/odroid-h2/application_note/install_ethernet_driver_on_h2plus)**
 
 ### Docker
 
@@ -154,7 +154,7 @@ Because i want my main NAS HDDs to be redundant, i set them up in [RAID 1 Mirror
 
 To set up a RAID 1 Array follow [this guide](https://www.digitalocean.com/community/tutorials/how-to-create-raid-arrays-with-mdadm-on-ubuntu-18-04#creating-a-raid-1-array).
 
-** Tip, if you are drives are new you can use the follow argument to your mdadm create command [--assume-clean](https://superuser.com/questions/438520/mdadm-raid-fast-setup-with-empty-drives). This stops you wasting resources copying 4TB (in my case) of 0s for 14 hours... **  
+**Tip: If your drives are new you can use the follow argument to your mdadm create command [--assume-clean](https://superuser.com/questions/438520/mdadm-raid-fast-setup-with-empty-drives). This stops you wasting resources copying 4TB (in my case) of 0s for 14 hours... **  
 
 ## Status OLED 
 
