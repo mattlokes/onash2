@@ -214,4 +214,4 @@ This script uses the Luma Library which does all the hard work, and is based on 
    A: If you are asking this question or dont know why this could be an issue, print it in PETG to be safe :)
  - **Q: Well why did you print in PLA then?**
  
-   A: Better print quality, easier to print and i understand the risks ( I think / hope ) 
+   A: Better print quality, easier to print and i understand the risks ( I think / hope )
