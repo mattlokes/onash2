@@ -5,7 +5,7 @@
 
 Welcome, My recent Reddit [post](https://www.reddit.com/r/3Dprinting/comments/juqaqa/designed_and_3d_printed_a_home_servernas/) exploded with overwhelming postive comments and requests for documentation on my 3D printed NAS project, so here it is!
 
-This document is in no means fully exhaustive, but hopefully give some idea/pointers of what's required to recreate. If you have any further questions please feel free to send me issues via the github [repo](https://github.com/mattlokes/onash2). I will do my best to answer :)
+This document is in no means fully exhaustive, but hopefully give some idea/pointers of what's required to recreate. I will point out links of useful guides rather than reinvent the wheel wherever i can. If you have any further questions please feel free to send me issues via the github [repo](https://github.com/mattlokes/onash2). I will do my best to answer :)
 
 If anyone does print the parts and make there own ONASH2, you can thank me by sending a photo of it! :)
 
@@ -16,8 +16,9 @@ Oh and why ONASH2.... ODroid - NAS - H2
  - [Case](#Case)
  - [Electronics](#Electronics)
  - [Software Setup](#Software-Setup)
+   - [Auto Start on applying power](#Auto-Start-on-applying-power)
    - [Flashing the OS](#Flashing-the-OS)
-   - [Compiling the Gigabit Ethernet Controller Driver](#Compiling-the-Gigabit-Ethernet-Controller-Driver)
+   - [Gigabit Ethernet Controller Driver](#Compiling-the-Gigabit-Ethernet-Controller-Driver)
    - [Docker](#Docker)
    - [MDADM](#MDADM)
  - [Status OLED](#Status-OLED) 
@@ -75,6 +76,10 @@ Part | Number | Comment
 ---- | ------ | -------
 [ODroid H2+](https://www.hardkernel.com/shop/odroid-h2plus) | 1 | None
 [60W 15V Power Supply](https://www.hardkernel.com/shop/15v-4a-power-supply-uk-plug/) | 1 | None
+[ODroid H2+ SATA Power/Data Cables](https://www.hardkernel.com/shop/sata-data-and-power-cable/) | 2 | The power cables are pretty proprietry as far as i can tell.
+[NVME](https://www.amazon.co.uk/gp/product/B07YFF8879/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) | 1 | For your OS Drive, you could use a hardkernel EMMC instead.
+[DDR4 RAM](https://www.amazon.co.uk/gp/product/B019FRBHZ0/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) | 1/2 | The maximum the ODroid supports is 32GB, use case dependant how much to get.
+SATA 2.5"/3.5" HDD | 1/2 | If you want to create a RAID you will need two (you dont need identical drivers but it helps)
 [5V PWM Noctua 120x120 Fan](https://www.amazon.co.uk/gp/product/B07DXDQKZM/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) | 1 | **Make sure its 5V!**
 [JST 1.25mm 4 Pin](https://www.ebay.co.uk/itm/302007426719) | 1 | Required to connect the System Fan
 [1.5" I2C OLED](https://www.amazon.co.uk/gp/product/B07F3Y984N/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) | 1 | Case is designed for exactly this OLED dimensions.
@@ -104,12 +109,80 @@ _I believe the USB port is only brought to the GPIO expansion header on the H2+ 
 
 
 ## Software Setup
+
+I'd advise doing all the software setup before you construct the server case.
+
+### Auto Start on applying power
+Follow the instructions [here](https://wiki.odroid.com/odroid-h2/application_note/autostart_when_power_applied)
+
 ### Flashing the OS
-### Compiling the Gigabit Ethernet Controller Driver
+Follow the instructions on [Hardkernel](https://wiki.odroid.com/odroid-h2/start#installation) for this. However i picked 
+[Ubuntu Server 20.04 LTS](https://releases.ubuntu.com/20.04/ubuntu-20.04.1-live-server-amd64.iso). 
+_I picked server edition because it doesnt start up an X server or any Window Manger, i dont want the GUI taking up any resources when I dont plan to use it._
+
+To "Flash" the OS you will need a USB Mouse and keyboard/HDMI cable hooked up to the ODroid so that you can go through the installation steps.
+
+Its pretty straightforward but you will get some fun messages about missing Network Interface. At the time of writing the Gigabit ethernet controller drvier is not part of the Kernel in 20.04 LTS (5.4.0-52-generic). [You can sort this out after OS installation](#Gigabit-Ethernet-Controller-Driver).
+
+### Gigabit Ethernet Controller Driver
+#### Compiling the Driver
+You can follow the guide on [Hardkernel](https://wiki.odroid.com/odroid-h2/application_note/install_ethernet_driver_on_h2plus). 
+The process is very much a chicken and the egg sort of situation, compiling a network driver without a network driver was tricky.
+
+I tried USB tethering, but with an iPhone i just couldnt get it to work without installing packages which is also tricky without a network connection.
+
+I ended up setting up an QEMU VM running the Ubuntu Server 20.04 LTS image on another machine i have, then compiled the driver on there. It was surprisingly easy to do but probably not for a beginner.
+
+I also see theres [now steps on Hardkernel](https://wiki.odroid.com/odroid-h2/application_note/install_ethernet_driver_on_h2plus) for loading packages onto a USB drive. This looks like the simpliest method. 
+
+#### Using Precompiled Driver
+
+If you are using the an Ubuntu Image with the same kernel (5.4.0-52-generic) as me, i've also [included the driver in the github repo](https://github.com/mattlokes/onash2/tree/main/software/r8125/5.4.0-52-generic) to make it super easy. You can copy this to your board using a USB stick and then load it into your kernel using [**insmod**](https://linux.die.net/man/8/insmod), then to bring up the network interface follow the instructions on [Hardkernel](https://wiki.odroid.com/odroid-h2/application_note/install_ethernet_driver_on_h2plus) 
+
+** If you do use my Precompiled Driver, as soon as its working i suggest you install properly using the instructions on [Hardkernel](https://wiki.odroid.com/odroid-h2/application_note/install_ethernet_driver_on_h2plus)
+
 ### Docker
+
+I use [Docker](https://docs.docker.com/get-started/) to run all my services, being able to containerize all the dependancies allows for super easy backups and also makes things very easy to manage. I also run [Portainer](https://www.portainer.io/) in a Docker container which gives a fantastic Web UI for managing all the other Docker containers.
+
+I'm not going into how to set these up as theres plenty of information about Docker around, just have a Google :)!
+
 ### MDADM
+
+Because i want my main NAS HDDs to be redundant, i set them up in [RAID 1 Mirror](https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_1) using MDADM. 
+
+To set up a RAID 1 Array follow [this guide](https://www.digitalocean.com/community/tutorials/how-to-create-raid-arrays-with-mdadm-on-ubuntu-18-04#creating-a-raid-1-array).
+
+** Tip, if you are drives are new you can use the follow argument to your mdadm create command [--assume-clean](https://superuser.com/questions/438520/mdadm-raid-fast-setup-with-empty-drives). This stops you wasting resources copying 4TB (in my case) of 0s for 14 hours... **  
+
 ## Status OLED 
 ### I2C connections
+
+I assume you have connected up your I2C Display following the [wiring diagram above](#OLED/USB Wiring). I2C 6 on the GPIO header is accessible via ```/dev/i2c-2``` from the linux terminal. The first thing you will need to do is find the address of the Display. I2C supports upto 127 addresses 0x00 - 0x7F. On my OLED there was a choice of two addresses based on a resistor soldered between two points that could be swapped (0x78/0x7A). However it turns out the PCB description was lying to me and the address was actaully 0x3C go figure....
+
+Anyway, to be able to find the address/confirm you've got something there, you can use i2c-tools to do a "detect" of the bus. Now theres a few fun caveats here:
+1. I2C doesnt strictly support "discovery" so if you run this on an I2C bus thats used for other purposes (CPU Temperature sensors / Clock chips etc) it could potential have bad side effects.
+2. By default i2c tools runs SMBus flavour commands which is a subset of I2C commonly used for motherboard components, if you dont use the -r argument things wont work.
+
+```bash
+sudo apt-get install i2c-tools
+sudo i2cdetect -a -r 2
+```
+
+This should give you something like:
+
+```bash
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- 3c -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+```    
+   
 ### Docker File
 ## FAQ
  - **Q: How much did this cost all in all?**
