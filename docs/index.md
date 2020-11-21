@@ -22,8 +22,8 @@ Oh and why ONASH2.... ODroid - NAS - H2
    - [Docker](#Docker)
    - [MDADM](#MDADM)
  - [Status OLED](#Status-OLED) 
-   - [I2C connection](#I2C-connections)
-   - [Docker File](#Docker-File)
+   - [I2C connections](#I2C-connections)
+   - [Python/Docker](#PythonDocker)
  - [FAQ](#FAQ)
 
 ## Specifications
