@@ -118,6 +118,7 @@ Follow the instructions [here](https://wiki.odroid.com/odroid-h2/application_not
 ### Flashing the OS
 Follow the instructions on [Hardkernel](https://wiki.odroid.com/odroid-h2/start#installation) for this. However i picked 
 [Ubuntu Server 20.04 LTS](https://releases.ubuntu.com/20.04/ubuntu-20.04.1-live-server-amd64.iso). 
+
 _I picked server edition because it doesnt start up an X server or any Window Manger, i dont want the GUI taking up any resources when I dont plan to use it._
 
 To "Flash" the OS you will need a USB Mouse and keyboard/HDMI cable hooked up to the ODroid so that you can go through the installation steps.
@@ -129,7 +130,7 @@ Its pretty straightforward but you will get some fun messages about missing Netw
 You can follow the guide on [Hardkernel](https://wiki.odroid.com/odroid-h2/application_note/install_ethernet_driver_on_h2plus). 
 The process is very much a chicken and the egg sort of situation, compiling a network driver without a network driver was tricky.
 
-I tried USB tethering, but with an iPhone i just couldnt get it to work without installing packages which is also tricky without a network connection.
+I tried USB tethering, but with an iPhone i just couldnt get it to work without installing packages, which is also tricky without a network connection.
 
 I ended up setting up an QEMU VM running the Ubuntu Server 20.04 LTS image on another machine i have, then compiled the driver on there. It was surprisingly easy to do but probably not for a beginner.
 
@@ -156,13 +157,14 @@ To set up a RAID 1 Array follow [this guide](https://www.digitalocean.com/commun
 ** Tip, if you are drives are new you can use the follow argument to your mdadm create command [--assume-clean](https://superuser.com/questions/438520/mdadm-raid-fast-setup-with-empty-drives). This stops you wasting resources copying 4TB (in my case) of 0s for 14 hours... **  
 
 ## Status OLED 
+
 ### I2C connections
 
-I assume you have connected up your I2C Display following the [wiring diagram above](#OLED/USB Wiring). I2C 6 on the GPIO header is accessible via ```/dev/i2c-2``` from the linux terminal. The first thing you will need to do is find the address of the Display. I2C supports upto 127 addresses 0x00 - 0x7F. On my OLED there was a choice of two addresses based on a resistor soldered between two points that could be swapped (0x78/0x7A). However it turns out the PCB description was lying to me and the address was actaully 0x3C go figure....
+I assume you have connected up your I2C Display following the [wiring diagram above](#OLED/USB Wiring). I2C 6 on the GPIO header is accessible via ```/dev/i2c-2``` from the linux terminal. The first thing you will need to do is find the address of the Display. I2C supports upto 127 addresses ```0x00 - 0x7F```. On my OLED there was a choice of two addresses based on a resistor soldered between two points that could be swapped (```0x78``` or ```0x7A```). However it turns out the PCB description was lying to me and the address was actaully ```0x3C``` go figure....
 
 Anyway, to be able to find the address/confirm you've got something there, you can use i2c-tools to do a "detect" of the bus. Now theres a few fun caveats here:
 1. I2C doesnt strictly support "discovery" so if you run this on an I2C bus thats used for other purposes (CPU Temperature sensors / Clock chips etc) it could potential have bad side effects.
-2. By default i2c tools runs SMBus flavour commands which is a subset of I2C commonly used for motherboard components, if you dont use the -r argument things wont work.
+2. By default i2c tools runs SMBus flavour commands which is a subset of I2C commonly used for motherboard components, if you dont use the ```-r``` argument things wont work.
 
 ```bash
 sudo apt-get install i2c-tools
@@ -182,8 +184,18 @@ This should give you something like:
 60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 70: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 ```    
+
+With this setup you are ready to use the code.
    
-### Docker File
+### Python/Docker
+
+You can get the Docker File/Source to build the image from [here](https://github.com/mattlokes/onash2/tree/main/software/sysinfo_lcd/sysinfo_lcd_dev)
+
+You can build/run the image as a container using the [Docker-compose YAML](https://github.com/mattlokes/onash2/tree/main/software/sysinfo_lcd)
+
+This script uses the Luma Library which does all the hard work, and is based on one of the Luma examples which i modified to work for my use case. There are some hardcoded magic numbers in the python script which are specific to my setup, these must be changed before building the Docker image. These could(probably should) have been added as arguments to make it easier to reuse. Hopefully it will be pretty obvious what to change.
+
+
 ## FAQ
  - **Q: How much did this cost all in all?**
  
@@ -197,32 +209,3 @@ This should give you something like:
  - **Q: Well why did you print in PLA then?**
  
    A: Better print quality, easier to print and i understand the risks ( I think / hope )
-
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/mattlokes/onash2/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
