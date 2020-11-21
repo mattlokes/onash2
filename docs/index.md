@@ -160,7 +160,7 @@ To set up a RAID 1 Array follow [this guide](https://www.digitalocean.com/commun
 
 ### I2C connections
 
-I assume you have connected up your I2C Display following the [wiring diagram above](#OLED/USB-Wiring). I2C 6 on the GPIO header is accessible via ```/dev/i2c-2``` from the linux terminal. The first thing you will need to do is find the address of the Display. I2C supports upto 127 addresses ```0x00 - 0x7F```. On my OLED there was a choice of two addresses based on a resistor soldered between two points that could be swapped (```0x78``` or ```0x7A```). However it turns out the PCB description was lying to me and the address was actaully ```0x3C``` go figure....
+I assume you have connected up your I2C Display following the [wiring diagram above](#OLEDUSB-Wiring). I2C 6 on the GPIO header is accessible via ```/dev/i2c-2``` from the linux terminal. The first thing you will need to do is find the address of the Display. I2C supports upto 127 addresses ```0x00 - 0x7F```. On my OLED there was a choice of two addresses based on a resistor soldered between two points that could be swapped (```0x78``` or ```0x7A```). However it turns out the PCB description was lying to me and the address was actaully ```0x3C``` go figure....
 
 Anyway, to be able to find the address/confirm you've got something there, you can use i2c-tools to do a "detect" of the bus. Now theres a few fun caveats here:
 1. I2C doesnt strictly support "discovery" so if you run this on an I2C bus thats used for other purposes (CPU Temperature sensors / Clock chips etc) it could potential have bad side effects.
