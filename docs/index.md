@@ -76,6 +76,7 @@ Part | Number | Comment
 [5V PWM Noctua 120x120 Fan](https://www.amazon.co.uk/gp/product/B07DXDQKZM/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) | 1 | **Make sure its 5V!**
 [JST 1.25mm 4 Pin](https://www.ebay.co.uk/itm/302007426719) | 1 | Required to connect the System Fan
 [1.5" I2C OLED](https://www.amazon.co.uk/gp/product/B07F3Y984N/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) | 1 | Case is designed for exactly this OLED dimensions
+4k7 Resistor | 2 | Used to pull High the I2C SDA/SCLK lines
 [USB A Socket](https://www.amazon.co.uk/gp/product/B07TVHRH5Q/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) | 1 | Only required if you want the internal USB Port
 
 ### Fan wiring
@@ -90,11 +91,12 @@ GND  |	![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) RED |	![#
 TACH |	![#ffff00](https://via.placeholder.com/15/ffff00/000000?text=+) YELLOW |	![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) GREEN
 PWM  |	![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) GREEN | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)BLUE
 
-### OLED Wiring
+### OLED/USB Wiring
 
-See [Status OLED](#Status-OLED)
+_I believe the USB port is only brought to the GPIO expansion header on the H2+ (Not the H2)._
 
-### Internal USB Wiring
+![Wiring](https://github.com/mattlokes/onash2/blob/main/docs/wiring.png?raw=true
+
 
 
 ## Software Setup
