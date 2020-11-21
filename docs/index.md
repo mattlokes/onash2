@@ -47,13 +47,13 @@ All parts pictured were printed in Galaxy Black Prusament PLA on a PRUSA Mini us
 
 Part | Number | Print time (@ Above settings) | Required
 ---- | ------ | ----------------------------- | ---------
-[onash2_case_bottom.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_case_bottom.stl)| 1 | ~15 hrs | Yes
-[onash2_case_top.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_case_top.stl)| 1 | ~15 hrs | Yes
-[onash2_lag_0.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_leg_0.stl)| 1 | ~5 hrs* | Yes
-[onash2_lag_1.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_leg_1.stl)| 1 | * | Yes
-[onash2_lag_2.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_leg_2.stl)| 1 | * | Yes
-[onash2_lag_3.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_leg_3.stl)| 1 | * | Yes
-[onash2_2.5_3.5_hdd_adapter.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_2.5_3.5_hdd_adapter.stl)| 2 | ~30 mins | No
+[onash2_case_bottom.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_case_bottom.stl) | 1 | ~15 hrs | Yes
+[onash2_case_top.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_case_top.stl) | 1 | ~15 hrs | Yes
+[onash2_lag_0.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_leg_0.stl) | 1 | ~5 hrs* | Yes
+[onash2_lag_1.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_leg_1.stl) | 1 | * | Yes
+[onash2_lag_2.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_leg_2.stl) | 1 | * | Yes
+[onash2_lag_3.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_leg_3.stl) | 1 | * | Yes
+[onash2_2.5_3.5_hdd_adapter.stl](https://github.com/mattlokes/onash2/blob/main/stl/onash2_2.5_3.5_hdd_adapter.stl) | 2 | ~30 mins | No
 _*Print Time is the total applied to all legs printed on the same plate_
 
 ### Other Parts List
@@ -71,12 +71,12 @@ Part | Number | Comment
 ### Parts List
 Part | Number | Comment 
 ---- | ------ | -------
-[ODroid H2+]() | 1 |
-[60W 15V Power Supply]() | 1 |
-[5V PWM Noctua 120x120 Fan]() | 1 | **Make sure its 5V!**
+[ODroid H2+](https://www.hardkernel.com/shop/odroid-h2plus) | 1 | -
+[60W 15V Power Supply](https://www.hardkernel.com/shop/15v-4a-power-supply-uk-plug/) | 1 | -
+[5V PWM Noctua 120x120 Fan](https://www.amazon.co.uk/gp/product/B07DXDQKZM/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) | 1 | **Make sure its 5V!**
 [JST 1.25mm 4 Pin](https://www.ebay.co.uk/itm/302007426719) | 1 | Required to connect the System Fan
 [1.5" I2C OLED](https://www.amazon.co.uk/gp/product/B07F3Y984N/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) | 1 | Case is designed for exactly this OLED dimensions
-[USB A Socket]() | 1 | Only required if you want the internal USB Port
+[USB A Socket](https://www.amazon.co.uk/gp/product/B07TVHRH5Q/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) | 1 | Only required if you want the internal USB Port
 
 ### Fan wiring
 
